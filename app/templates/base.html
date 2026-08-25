@@ -250,11 +250,11 @@
                 <span>📄</span> PDF Toolkit
             </a>
             <div class="nav-links">
-                <a href="{{ url_for('index') }}">🏠 Home</a>
-                <a href="{{ url_for('pdf_to_image_route') }}">🖼️ PDF → Image</a>
-                <a href="{{ url_for('image_to_pdf_route') }}">📷 Image → PDF</a>
-                <a href="{{ url_for('merge_pdf_route') }}">📑 Merge</a>
-                <a href="{{ url_for('lock_pdf_route') }}">🔒 Lock</a>
+                <a href="{{ url_for('index') }}">Home</a>
+                
+                <a href="{{ url_for('image_to_pdf_route') }}">Image → PDF</a>
+                <a href="{{ url_for('merge_pdf_route') }}">Merge</a>
+                <a href="{{ url_for('lock_pdf_route') }}">Lock</a>
             </div>
         </div>
     </nav>
@@ -264,7 +264,7 @@
     </div>
 
     <footer class="footer">
-        <p>📄 PDF Toolkit - Your Private PDF Processing Suite</p>
+        <p>PDF Toolkit - Your Private PDF Processing Suite</p>
     </footer>
 
     {% block extra_js %}{% endblock %}

@@ -13,21 +13,20 @@ from pdf2image import convert_from_bytes
 
 # === CONFIGURATION ===
 # For Windows - specify your Poppler path
-POPPLER_PATH = r'C:\Users\Shruti\Downloads\poppler-26.02.0\Library\bin'
+POPPLER_PATH = os.getenv('POPPLER_PATH', r'C:\Users\Shruti\Downloads\poppler-26.02.0\Library\bin')
 
 # For Mac/Linux, this will be None and pdf2image will auto-detect
 # POPPLER_PATH = None  # Uncomment if on Mac/Linux
 
 def get_poppler_path():
     """
-    Returns the Poppler path based on OS.
-    Windows: Uses the specified path
-    Mac/Linux: Returns None (auto-detect)
+    Returns the Poppler path based on OS or environment variable.
     """
-    if os.name == 'nt':  # Windows
+    # For Windows with explicit path
+    if POPPLER_PATH and os.path.exists(POPPLER_PATH):
         return POPPLER_PATH
-    else:  # Mac/Linux
-        return None
+    # For Mac/Linux or if path doesn't exist, return None (auto-detect)
+    return None
 
 # === PDF GENERATION ===
 

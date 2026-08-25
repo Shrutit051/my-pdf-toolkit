@@ -44,45 +44,6 @@ def tools():
     """Alternative: List all available tools"""
     return render_template('tools.html')
 
-# === PDF TO IMAGE ===
-
-@app.route('/pdf-to-image', methods=['GET', 'POST'])
-def pdf_to_image_route():
-    if request.method == 'POST':
-        if 'file' not in request.files:
-            return render_template('error.html', error='No file uploaded'), 400
-        
-        file = request.files['file']
-        if file.filename == '':
-            return render_template('error.html', error='No file selected'), 400
-        
-        if not allowed_file(file.filename) or not file.filename.endswith('.pdf'):
-            return render_template('error.html', error='Please upload a PDF file'), 400
-        
-        try:
-            pdf_bytes = file.read()
-            images = pdf_to_images(pdf_bytes)
-            
-            # Convert images to base64 for display
-            image_data = []
-            for img in images:
-                buffer = BytesIO()
-                img.save(buffer, format='JPEG', quality=85)
-                img_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
-                image_data.append(img_base64)
-            
-            return render_template('result_images.html', images=image_data, page_count=len(images))
-        except Exception as e:
-            return render_template('error.html', error=f'Error processing PDF: {str(e)}'), 500
-    
-    return render_template('pdf_to_image.html')
-
-@app.route('/pdf-to-image/download')
-def download_images():
-    """Download all images as a zip file"""
-    # We'll implement zip download later
-    return redirect(url_for('index'))
-
 # === IMAGE TO PDF ===
 
 @app.route('/image-to-pdf', methods=['GET', 'POST'])
