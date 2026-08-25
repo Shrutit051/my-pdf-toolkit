@@ -1,0 +1,39 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Local temp files
+temp_uploads/
+temp_outputs/
+uploads/
+output_images/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PDF/Image outputs
+*.pdf
+*.jpg
+*.png
+*.jpeg
+*.gif
+*.bmp
