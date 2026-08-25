@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}PDF to Image{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">🖼️ PDF to Image</h1>
+    <p class="page-subtitle">Convert each page of your PDF to an image</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload PDF</label>
+            <input type="file" name="file" class="form-control form-control-file" accept=".pdf" required>
+        </div>
+        <button type="submit" class="btn btn-success">🔄 Convert</button>
+    </form>
+</div>
+{% endblock %}

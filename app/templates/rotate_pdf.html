@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Rotate PDF{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">🔄 Rotate PDF</h1>
+    <p class="page-subtitle">Rotate all pages in your PDF</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload PDF</label>
+            <input type="file" name="file" class="form-control form-control-file" accept=".pdf" required>
+        </div>
+        <div class="form-group">
+            <label>Rotation Angle</label>
+            <select name="rotation" class="form-control" required>
+                <option value="90">90° (Clockwise)</option>
+                <option value="180">180°</option>
+                <option value="270">270° (Counter-Clockwise)</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">🔄 Rotate</button>
+    </form>
+</div>
+{% endblock %}

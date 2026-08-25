@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Text Extraction Results{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">📝 Extracted Text</h1>
+    <p class="page-subtitle">Text from: {{ filename }}</p>
+    
+    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; white-space: pre-wrap; max-height: 500px; overflow-y: auto; font-family: monospace;">
+        {{ text if text else 'No text found in this PDF' }}
+    </div>
+    
+    <div class="mt-3 text-center">
+        <a href="{{ url_for('index') }}" class="btn">🏠 Back to Home</a>
+    </div>
+</div>
+{% endblock %}

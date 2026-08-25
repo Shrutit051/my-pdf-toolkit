@@ -1,0 +1,67 @@
+<!-- app/templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}Home - PDF Toolkit{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">📄 PDF Toolkit</h1>
+    <p class="page-subtitle">Your private, all-in-one PDF processing suite. All files stay on your device.</p>
+    
+    <div class="grid-3 mt-3">
+        <a href="{{ url_for('pdf_to_image_route') }}" class="tool-card">
+            <div class="tool-icon">🖼️</div>
+            <div class="tool-name">PDF to Image</div>
+            <div class="tool-desc">Convert PDF pages to images</div>
+        </a>
+        
+        <a href="{{ url_for('image_to_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">📷</div>
+            <div class="tool-name">Image to PDF</div>
+            <div class="tool-desc">Convert images to PDF</div>
+        </a>
+        
+        <a href="{{ url_for('merge_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">📑</div>
+            <div class="tool-name">Merge PDFs</div>
+            <div class="tool-desc">Combine multiple PDFs into one</div>
+        </a>
+        
+        <a href="{{ url_for('split_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">✂️</div>
+            <div class="tool-name">Split PDF</div>
+            <div class="tool-desc">Extract specific pages</div>
+        </a>
+        
+        <a href="{{ url_for('lock_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">🔒</div>
+            <div class="tool-name">Lock PDF</div>
+            <div class="tool-desc">Add password protection</div>
+        </a>
+        
+        <a href="{{ url_for('unlock_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">🔓</div>
+            <div class="tool-name">Unlock PDF</div>
+            <div class="tool-desc">Remove password protection</div>
+        </a>
+        
+        <a href="{{ url_for('rotate_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">🔄</div>
+            <div class="tool-name">Rotate PDF</div>
+            <div class="tool-desc">Rotate pages 90/180/270 degrees</div>
+        </a>
+        
+        <a href="{{ url_for('extract_text_route') }}" class="tool-card">
+            <div class="tool-icon">📝</div>
+            <div class="tool-name">Extract Text</div>
+            <div class="tool-desc">Extract text from PDF</div>
+        </a>
+        
+        <a href="{{ url_for('create_pdf_route') }}" class="tool-card">
+            <div class="tool-icon">📄</div>
+            <div class="tool-name">Create PDF</div>
+            <div class="tool-desc">Create PDF from text</div>
+        </a>
+    </div>
+</div>
+{% endblock %}

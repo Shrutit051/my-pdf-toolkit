@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Extract Text{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">📝 Extract Text</h1>
+    <p class="page-subtitle">Extract all text from your PDF</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload PDF</label>
+            <input type="file" name="file" class="form-control form-control-file" accept=".pdf" required>
+        </div>
+        <button type="submit" class="btn btn-success">📝 Extract</button>
+    </form>
+</div>
+{% endblock %}

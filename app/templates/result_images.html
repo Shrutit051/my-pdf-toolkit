@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}PDF to Image Results{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">🖼️ Conversion Complete!</h1>
+    <p class="page-subtitle">Converted {{ page_count }} page(s) to images</p>
+    
+    <div class="image-grid">
+        {% for img in images %}
+            <div>
+                <img src="data:image/jpeg;base64,{{ img }}" alt="Page {{ loop.index }}">
+                <p class="text-center text-muted">Page {{ loop.index }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="mt-3 text-center">
+        <a href="{{ url_for('index') }}" class="btn">🏠 Back to Home</a>
+    </div>
+</div>
+{% endblock %}

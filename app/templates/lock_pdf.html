@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Lock PDF{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">🔒 Lock PDF</h1>
+    <p class="page-subtitle">Add password protection to your PDF</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload PDF</label>
+            <input type="file" name="file" class="form-control form-control-file" accept=".pdf" required>
+        </div>
+        <div class="form-group">
+            <label>Password (min 4 characters)</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter password" minlength="4" required>
+        </div>
+        <button type="submit" class="btn btn-success">🔒 Lock PDF</button>
+    </form>
+</div>
+{% endblock %}

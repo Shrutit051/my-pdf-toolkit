@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Merge PDFs{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">📑 Merge PDFs</h1>
+    <p class="page-subtitle">Combine multiple PDFs into one document</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload PDFs (at least 2)</label>
+            <input type="file" name="files" class="form-control form-control-file" accept=".pdf" multiple required>
+        </div>
+        <button type="submit" class="btn btn-success">📑 Merge</button>
+    </form>
+</div>
+{% endblock %}

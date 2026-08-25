@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Image to PDF{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">📷 Image to PDF</h1>
+    <p class="page-subtitle">Convert one or more images into a single PDF</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload Images (multiple allowed)</label>
+            <input type="file" name="files" class="form-control form-control-file" accept="image/*" multiple required>
+        </div>
+        <button type="submit" class="btn btn-success">📄 Create PDF</button>
+    </form>
+</div>
+{% endblock %}

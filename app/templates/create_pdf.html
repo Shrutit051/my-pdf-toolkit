@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Create PDF{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">📄 Create PDF</h1>
+    <p class="page-subtitle">Create a PDF from text</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Enter your text</label>
+            <textarea name="text" class="form-control" rows="8" placeholder="Type your content here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">📄 Create PDF</button>
+    </form>
+</div>
+{% endblock %}
